@@ -1,7 +1,8 @@
 import dynamic from 'next/dynamic';
 import useResize from '../../utils/useResize';
-import AboutMobile from './AboutMobile';
-import AboutDesktop from './AboutDesktop';
+
+const AboutMobile = dynamic(() => import('./AboutMobile'))
+const AboutDesktop = dynamic(() => import('./AboutDesktop'))
 
 const AboutRoot = ({ users }) => {
   const { isMobile } = useResize();
